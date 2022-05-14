@@ -1,0 +1,163 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest/globals": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "airbnb-typescript"
+  ],
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "settings": {
+    "react": { "version": "detect" },
+    "import/resolver": { "typescript": {} }
+  },
+  "plugins": [
+    "react",
+    "@typescript-eslint",
+    "testing-library",
+    "jest"
+  ],
+  "ignorePatterns": [
+    "node_modules/**",
+    "helm/**",
+    "nginx/**",
+    "plop-templates/**",
+    "src/services/__mocks__/**",
+    "/root/src/*.test.tsxsrc/**/*.test.tsx",
+    "/root/src/*.test.tsxsrc/serviceWorker.ts",
+    "public/mockServiceWorker.js",
+    "config/**",
+    "metadata/**",
+    "build/**"],
+  "rules": {
+    "indent": [2, 2, { "SwitchCase": 1}],
+    "quotes": [2, "single", { "allowTemplateLiterals": true }],
+    "jsx-quotes": ["error", "prefer-double"],
+    "no-console": "off",
+    "max-len": [
+      "error",
+      {
+        "code": 120,
+        "ignorePattern": "^import .* | ^export .*",
+        "ignoreStrings": false,
+        "ignoreRegExpLiterals": false
+      }
+    ],
+    "jest/no-disabled-tests": "warn",
+    "jest/no-focused-tests": "error",
+    "jest/no-identical-title": "error",
+    "jest/prefer-to-have-length": "warn",
+    "jest/valid-expect": "error",
+    "import/no-unresolved": 0,
+    "import/extensions": 0,
+    "import/no-extraneous-dependencies": 0,
+    "react/jsx-no-constructed-context-values": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/default-props-match-prop-types": 0,
+    "react-hooks/exhaustive-deps": 0,
+    "react/require-default-props": 0,
+    "consistent-return": 0,
+    "jsx-a11y/media-has-caption": 0,
+    "jsx-a11y/no-autofocus": 0,
+    "no-param-reassign": 0,
+    "default-case": 0,
+    "no-nested-ternary": 0,
+    "array-callback-return": 0,
+    "no-restricted-syntax": 0,
+    "react/no-danger": 0,
+    "class-methods-use-this": 0,
+    "no-underscore-dangle": 0,
+    "global-require": 0,
+    "no-await-in-loop": 0,
+    "no-case-declarations": 0,
+    "operator-linebreak": 0,
+    "prefer-const": 0,
+    "react/prop-types": 0
+  },
+  "overrides": [
+    // Only uses Testing Library lint rules in test files
+    {
+      "files": [
+        "**/__tests__/**/*.[jt]s?(x)",
+        "**/?(*.)+(spec|test).[jt]s?(x)"
+      ],
+      "extends": ["plugin:testing-library/react"]
+    },
+    {
+      "files": ["**/*.ts", "**/*.tsx"],
+      "rules": {
+        "@typescript-eslint/no-unsafe-assignment": 0,
+        "@typescript-eslint/no-unsafe-member-access": 0,
+        "react/function-component-definition": ["error", {
+          "namedComponents": "arrow-function",
+          "unnamedComponents": "arrow-function"
+        }],
+        "import/no-cycle": 0,
+        "@typescript-eslint/no-unsafe-return": 0,
+        "@typescript-eslint/no-unsafe-argument": 0,
+        "@typescript-eslint/no-explicit-any": 0,
+        "react/destructuring-assignment": 0,
+        "@typescript-eslint/no-unsafe-call": 0,
+        "prefer-destructuring": 0,
+        "@typescript-eslint/restrict-plus-operands": 0,
+        "no-plusplus": 0,
+        "no-return-assign": 0,
+        "@typescript-eslint/no-misused-promises": 0,
+        "@typescript-eslint/no-floating-promises": 0,
+        "@typescript-eslint/restrict-template-expressions": 0,
+        "@typescript-eslint/require-await": 0,
+        "@typescript-eslint/ban-types": 0,
+        "@typescript-eslint/no-non-null-assertion": 0,
+        "@typescript-eslint/unbound-method": 0,
+        "@typescript-eslint/ban-ts-comment": 0,
+        "@typescript-eslint/no-unused-expressions": 0,
+        "@typescript-eslint/no-non-null-asserted-optional-chain": 0,
+        "@typescript-eslint/no-shadow": 0,
+        "@typescript-eslint/return-await": 0,
+        "testing-library/no-unnecessary-act": 0,
+        "testing-library/no-wait-for-multiple-assertions": 0,
+        "testing-library/no-wait-for-side-effects": 0,
+        "testing-library/no-node-access": 0,
+        "testing-library/prefer-screen-queries": 0,
+        "testing-library/await-async-utils": 0,
+        "jest/no-disabled-tests": 0,
+        "@typescript-eslint/no-use-before-define": 0,
+        "jsx-a11y/label-has-associated-control": 0,
+        "react/button-has-type": 0,
+        "import/no-extraneous-dependencies": 0,
+        "@typescript-eslint/comma-dangle": 0,
+        "prefer-const": 0,
+        "no-lonely-if": 0,
+        "jsx-a11y/click-events-have-key-events": 0,
+        "jsx-a11y/no-static-element-interactions": 0,
+        "jsx-a11y/no-noninteractive-element-interactions": 0,
+        "@typescript-eslint/await-thenable": 0
+      },
+      "extends": [
+        "airbnb-typescript",
+        "plugin:@typescript-eslint/eslint-recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ]
+    }
+  ]
+
+}
